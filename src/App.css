@@ -1,6 +1,18 @@
-.node {
-  display: inline-block;
-  border: 1px solid black;
-  padding: 2px;
-  text-align: center;
+.map {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 50%;
+  align-items: center;
+}
+
+.row {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2px;
+  padding-right: 2px;
 }

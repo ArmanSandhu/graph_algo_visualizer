@@ -1,0 +1,20 @@
+.node {
+    display: inline-block;
+    border: 1px solid black;
+    padding: 2px;
+    text-align: center;
+    height: 25px;
+    width: 25px;
+  }
+
+  .isStart {
+    background-color: blue;
+  }
+
+  .isTarget {
+    background-color: green;
+  }
+
+  .isVisted {
+    background-color: red;
+  }
