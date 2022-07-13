@@ -108,21 +108,33 @@ function App() {
   }
   
   
-  function* dfs(startNode, nodes) {
+  function* bfs(startNode, nodes) {
     let queue = [];
-      queue.push(startNode);
-      while (queue.length > 0) {
-        let node = queue.shift();
+    queue.push(startNode);
+    while (queue.length > 0) {
+      let node = queue.shift();
         // node.visited = true;
         // if ((node.row === targetNode.row) && (node.col === targetNode.col)) {
         //   console.log("Found Target!");
         //   break;
         // }
-        yield visitNode(node.row, node.col);
-        let neigbours = findNeighbours(node.row, node.col, nodes);
-        queue.push(...neigbours);
+      yield visitNode(node.row, node.col);
+      let neigbours = findNeighbours(node.row, node.col, nodes);
+      queue.push(...neigbours);
+    }
   }
-}
+
+  function* dfs(startNode, nodes) {
+    let stack = [];
+    stack.push(startNode);
+    while (stack.length > 0) {
+      let node = stack.pop();
+      yield visitNode(node.row, node.col);
+      let neigbours = findNeighbours(node.row, node.col, nodes);
+      stack.push(...neigbours);
+    }
+  }
+
 
   const findTarget = () => {
     if (startNode !== null && targetNode !== null) {
